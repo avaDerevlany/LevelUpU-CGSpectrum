@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\CubedNumber.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\SumNumbers.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\Factors.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\LeapYear.cpp" />
     <ClCompile Include="LevelUpU_Tasks.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,12 @@
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\SumNumbers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\LeapYear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\Factors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">

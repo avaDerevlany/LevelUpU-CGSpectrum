@@ -56,12 +56,12 @@ void ThreeNumbers()
 }
 
 // I know this is not the appropriate place to put this function, but....
-bool IsNum(string num)
+bool IsNum(string num, bool signedNum)
 {
 	for (int i = 0; i < num.length(); i++)
 	{
 		// if the number is negative
-		if (i == 0 && num.length() > 1 && num[0] == '-') {/* is negative number */}
+		if (signedNum && i == 0 && num.length() > 1 && num[0] == '-') {/* is negative number */}
 		else if (!isdigit(num[i])) return false;
 	}
 	return true;

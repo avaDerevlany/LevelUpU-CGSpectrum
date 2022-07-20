@@ -5,5 +5,7 @@ Functions run in main() in LevelUpU_Tasks.cpp
 		SumNumbers.cpp
 		CubedNumber.cpp
 	Ch3
+		LeapYear.cpp
+		Factors.cpp
 		
 	
