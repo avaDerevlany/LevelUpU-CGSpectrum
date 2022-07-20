@@ -127,12 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\CubedNumber.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\SumNumbers.cpp" />
     <ClCompile Include="LevelUpU_Tasks.cpp" />
-    <ClCompile Include="Week2\CubedNumber.cpp" />
-    <ClCompile Include="Week2\SumNumbers.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Week2\Week2.h" />
+    <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

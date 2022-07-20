@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Week2\Week2.h"
+#include "01_SettingUpAndProgrammingFoundations\Section1Header.h"
 
 int main()
 {

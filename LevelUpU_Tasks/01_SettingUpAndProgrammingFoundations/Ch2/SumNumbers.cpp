@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Week2.h"
+#include "..\Section1Header.h"
 
 using namespace std;
 

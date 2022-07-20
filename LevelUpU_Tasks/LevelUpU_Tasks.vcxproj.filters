@@ -13,24 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Week2">
-      <UniqueIdentifier>{eed6f48f-75f5-4abb-bc5e-a63fbe3b404f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LevelUpU_Tasks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Week2\CubedNumber.cpp">
-      <Filter>Source Files\Week2</Filter>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\CubedNumber.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Week2\SumNumbers.cpp">
-      <Filter>Source Files\Week2</Filter>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\SumNumbers.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Week2\Week2.h">
-      <Filter>Source Files\Week2</Filter>
+    <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
