@@ -131,9 +131,12 @@
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\SumNumbers.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\Factors.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\LeapYear.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\BiggestNumber.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.cpp" />
     <ClCompile Include="LevelUpU_Tasks.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

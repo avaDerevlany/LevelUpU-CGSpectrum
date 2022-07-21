@@ -30,9 +30,18 @@
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\Factors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\BiggestNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
