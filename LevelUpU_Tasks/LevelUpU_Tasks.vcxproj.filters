@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LevelUpU_Tasks.cpp">
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch2\CubedNumber.cpp">
@@ -36,12 +36,21 @@
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02_MazeGameProject\Ch1\Pointers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02_MazeGameProject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="02_MazeGameProject\Section2Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

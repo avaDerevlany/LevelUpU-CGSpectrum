@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,11 +134,14 @@
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch3\LeapYear.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\BiggestNumber.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.cpp" />
-    <ClCompile Include="LevelUpU_Tasks.cpp" />
+    <ClCompile Include="02_MazeGameProject.cpp" />
+    <ClCompile Include="02_MazeGameProject\Ch1\Pointers.cpp" />
+    <ClCompile Include="01_SettingUpAndProgrammingFoundations.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h" />
+    <ClInclude Include="02_MazeGameProject\Section2Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
