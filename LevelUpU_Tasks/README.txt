@@ -1,4 +1,4 @@
-Functions run in main() of the file sharing the name of the root folder (ie 01_SettingUpAnd...)
+Functions run in main() of the file sharing the name of the root folder (ie 01_SettingUpAnd...) unless otherwise specified.
 
 01_SettingUpAndProgrammingFoundations
 	Ch2 
@@ -13,4 +13,7 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 02_MazeGameProject
 	Ch 1
 		Pointers
+	Ch 3
+		Project.sln (The Maze Game is it's own solution, please open and set Project.sln to start up project to run)
+			    (It is not inluded in the main LevelUpU_Tasks solution)
 	
