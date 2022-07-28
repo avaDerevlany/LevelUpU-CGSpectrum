@@ -16,4 +16,6 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 	Ch 3
 		Project.sln (The Maze Game is it's own solution, please open and set Project.sln to start up project to run)
 			    (It is not inluded in the main LevelUpU_Tasks solution)
+	Ch 4
+		Ava_Derevlany_02MazeGame-Ch4 [write up]
 	
