@@ -14,6 +14,7 @@ public:
 	LevelSelectionState(StateMachineExampleGame* pOwner);
 	~LevelSelectionState() = default;
 
-	virtual bool Update(bool processInput = true) override;
+	//virtual bool Update() override;
+	virtual bool ProcessInput() override;
 	virtual void Draw() override;
 };

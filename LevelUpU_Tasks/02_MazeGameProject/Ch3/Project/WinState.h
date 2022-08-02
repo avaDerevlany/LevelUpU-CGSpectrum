@@ -11,6 +11,7 @@ public:
 	WinState(StateMachineExampleGame* pOwner);
 	~WinState() = default;
 
-	virtual bool Update(bool processInput = true) override;
+	//virtual bool Update(bool processInput = true) override;
+	virtual bool ProcessInput() override;
 	virtual void Draw() override;
 };

@@ -20,32 +20,30 @@ MainMenuState::MainMenuState(StateMachineExampleGame* pOwner)
 {
 }
 
-bool MainMenuState::Update(bool processInput)
+bool MainMenuState::ProcessInput()
 {
 	bool shouldQuit = false;
-	if (processInput)
+	// if tue
+	int input = _getch();
+	if (input == kEscapeKey || (char)input == kQuit)
 	{
-		int input = _getch();
-		if (input == kEscapeKey || (char)input == kQuit)
-		{
-			shouldQuit = true;
-		}
-		else if ((char)input == kPlay)
-		{
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Gameplay);
-		}
-		else if ((char)input == kLevelSelect)
-		{
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::LevelSelect);
-		}
-		else if ((char)input == kHighScore)
-		{
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::HighScore);
-		}
-		else if ((char)input == kSettings)
-		{
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Settings);
-		}
+		shouldQuit = true;
+	}
+	else if ((char)input == kPlay)
+	{
+		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Gameplay);
+	}
+	else if ((char)input == kLevelSelect)
+	{
+		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::LevelSelect);
+	}
+	else if ((char)input == kHighScore)
+	{
+		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::HighScore);
+	}
+	else if ((char)input == kSettings)
+	{
+		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Settings);
 	}
 	return shouldQuit;
 }

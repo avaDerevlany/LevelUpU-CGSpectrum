@@ -11,7 +11,8 @@ public:
 	MainMenuState(StateMachineExampleGame* pOwner);
 	~MainMenuState() = default;
 
-	virtual bool Update(bool processInput = true) override;
+	//virtual bool Update() override;
+	virtual bool ProcessInput() override;
 	virtual void Draw() override;
 };
 

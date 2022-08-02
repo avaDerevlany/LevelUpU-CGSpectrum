@@ -13,6 +13,7 @@ public:
 	void Deinitialize();
 
 private:
-	bool Update(bool processInput = true);
+	bool Update();
+	void ProcessInput();
 	void Draw();
 };

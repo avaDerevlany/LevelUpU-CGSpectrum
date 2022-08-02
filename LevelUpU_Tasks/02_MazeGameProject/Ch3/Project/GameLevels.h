@@ -2,12 +2,21 @@
 #include <vector>
 #include <string>
 
+/*
+	Originally the file names/ level names were part of the GameState class.
+	However, I wanted to be able to edit the game level file names easily and so I made them their
+	own easy class to find. I also wanted to be able to access the level names outside of the game
+	actually running (for a level selection menu).
+	Lastly, the GameState itself only ever accessed the current level and number of levels. It 
+	did not need to know about all possible levels, so I extracted them out to their own class.
+*/
+
 class GameLevels
 {
 	static GameLevels* s_pInstance;
 
 	std::vector<std::string> m_LevelNames;
-	int numLevels = 3;
+	//int numLevels = 3;
 
 	int currentLevel = 0;
 
@@ -46,8 +55,8 @@ public:
 
 	int GetNumberOfLevels()
 	{
-		//return m_LevelNames.size();
-		return numLevels;
+		return m_LevelNames.size();
+		//return numLevels;
 	}
 
 	void SetCurrentLevel(int index)
@@ -68,7 +77,7 @@ public:
 	bool CheckReachedMaxLevel()
 	{
 		//if (currentLevel == m_LevelNames.size()) return true;
-		if (currentLevel == numLevels) return true;
+		if (currentLevel == m_LevelNames.size()) return true;
 		return false;
 	}
 };

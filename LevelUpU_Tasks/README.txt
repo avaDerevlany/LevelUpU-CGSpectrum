@@ -23,5 +23,7 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 	Ch 1	
 		1. SortingAlgorithm
 		2. / 3. MapTraversal
+	Ch 2
+		Refactoring maze game -> write up in 02_MazeGameProject\Ch3\Project Game.cpp and GameLevels.h
 		
 	

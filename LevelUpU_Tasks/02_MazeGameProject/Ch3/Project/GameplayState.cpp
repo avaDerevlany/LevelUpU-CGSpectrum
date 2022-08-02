@@ -62,60 +62,8 @@ void GameplayState::Enter()
 	Load();
 }
 
-bool GameplayState::Update(bool processInput)
+bool GameplayState::Update()
 {
-	if (processInput && !m_beatLevel)
-	{
-		int input = _getch();
-		int arrowInput = 0;
-		int newPlayerX = m_player.GetXPosition();
-		int newPlayerY = m_player.GetYPosition();
-
-		// One of the arrow keys were pressed
-		if (input == kArrowInput)
-		{
-			arrowInput = _getch();
-		}
-
-		if ((input == kArrowInput && arrowInput == kLeftArrow) ||
-			(char)input == 'A' || (char)input == 'a')
-		{
-			newPlayerX--;
-		}
-		else if ((input == kArrowInput && arrowInput == kRightArrow) ||
-			(char)input == 'D' || (char)input == 'd')
-		{
-			newPlayerX++;
-		}
-		else if ((input == kArrowInput && arrowInput == kUpArrow) ||
-			(char)input == 'W' || (char)input == 'w')
-		{
-			newPlayerY--;
-		}
-		else if ((input == kArrowInput && arrowInput == kDownArrow) ||
-			(char)input == 'S' || (char)input == 's')
-		{
-			newPlayerY++;
-		}
-		else if (input == kEscapeKey)
-		{
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-		}
-		else if ((char)input == 'Z' || (char)input == 'z')
-		{
-			m_player.DropKey();
-		}
-
-		// If position never changed
-		if (newPlayerX == m_player.GetXPosition() && newPlayerY == m_player.GetYPosition())
-		{
-			//return false;
-		}
-		else
-		{
-			HandleCollision(newPlayerX, newPlayerY);
-		}
-	}
 	if (m_beatLevel)
 	{
 		++m_skipFrameCount;
@@ -142,6 +90,61 @@ bool GameplayState::Update(bool processInput)
 			}
 
 		}
+	}
+
+	return false;
+}
+
+bool GameplayState::ProcessInput()
+{
+	int input = _getch();
+	int arrowInput = 0;
+	int newPlayerX = m_player.GetXPosition();
+	int newPlayerY = m_player.GetYPosition();
+
+	// One of the arrow keys were pressed
+	if (input == kArrowInput)
+	{
+		arrowInput = _getch();
+	}
+
+	if ((input == kArrowInput && arrowInput == kLeftArrow) ||
+		(char)input == 'A' || (char)input == 'a')
+	{
+		newPlayerX--;
+	}
+	else if ((input == kArrowInput && arrowInput == kRightArrow) ||
+		(char)input == 'D' || (char)input == 'd')
+	{
+		newPlayerX++;
+	}
+	else if ((input == kArrowInput && arrowInput == kUpArrow) ||
+		(char)input == 'W' || (char)input == 'w')
+	{
+		newPlayerY--;
+	}
+	else if ((input == kArrowInput && arrowInput == kDownArrow) ||
+		(char)input == 'S' || (char)input == 's')
+	{
+		newPlayerY++;
+	}
+	else if (input == kEscapeKey)
+	{
+		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
+	}
+	else if ((char)input == 'Z' || (char)input == 'z')
+	{
+		m_player.DropKey();
+	}
+
+	// If position never changed
+	if (newPlayerX == m_player.GetXPosition() && newPlayerY == m_player.GetYPosition())
+	{
+		//return false;
+	}
+	else
+	{
+		HandleCollision(newPlayerX, newPlayerY);
 	}
 
 	return false;
