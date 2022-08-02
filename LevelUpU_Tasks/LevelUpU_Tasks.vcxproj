@@ -137,11 +137,16 @@
     <ClCompile Include="02_MazeGameProject.cpp" />
     <ClCompile Include="02_MazeGameProject\Ch1\Pointers.cpp" />
     <ClCompile Include="01_SettingUpAndProgrammingFoundations.cpp" />
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading.cpp" />
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\03HelperFunctions.cpp" />
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\MapTraversal.cpp" />
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\SortingAlgorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h" />
     <ClInclude Include="02_MazeGameProject\Section2Header.h" />
+    <ClInclude Include="03_AlgorithmsAnalysisAndMultithreading\Section3Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

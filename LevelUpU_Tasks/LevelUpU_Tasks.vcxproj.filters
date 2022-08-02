@@ -42,6 +42,18 @@
     <ClCompile Include="02_MazeGameProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\SortingAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\03HelperFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\MapTraversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
@@ -51,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="02_MazeGameProject\Section2Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="03_AlgorithmsAnalysisAndMultithreading\Section3Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

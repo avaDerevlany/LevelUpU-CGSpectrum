@@ -3,8 +3,10 @@
 #include <iostream>
 #include "02_MazeGameProject\Section2Header.h"
 
+#if 0
 int main()
 {
     // Ch 1
     Pointers();
 }
+#endif

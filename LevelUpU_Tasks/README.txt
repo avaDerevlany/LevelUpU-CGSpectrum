@@ -18,4 +18,10 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 			    (It is not inluded in the main LevelUpU_Tasks solution)
 	Ch 4
 		Ava_Derevlany_02MazeGame-Ch4 [write up]
+
+03_AlgorithmsAnalysisAndMultithreading
+	Ch 1	
+		1. SortingAlgorithm
+		2. / 3. MapTraversal
+		
 	
