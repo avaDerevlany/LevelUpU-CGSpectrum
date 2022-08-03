@@ -85,5 +85,10 @@ int main()
     MapTraversal(x, v);     // (x, z, y, v)  cost:13
     MapTraversal(t, v);     // (t, y, v)  cost: 9
     MapTraversal(t, x);     // no path
+
+    std::cout << "\n------------------------------\n" << std::endl;
+
+    // Ch 3
+    HelloWorldExample();
 }
 #endif

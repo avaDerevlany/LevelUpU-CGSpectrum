@@ -141,6 +141,7 @@
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\03HelperFunctions.cpp" />
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\MapTraversal.cpp" />
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\SortingAlgorithm.cpp" />
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch3\IntroToThreading.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />

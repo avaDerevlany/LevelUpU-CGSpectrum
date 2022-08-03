@@ -58,3 +58,8 @@ public:
 
     }
 };
+
+
+// Ch 3
+void HelloWorldThread();
+void HelloWorldExample();

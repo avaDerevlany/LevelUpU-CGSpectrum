@@ -54,6 +54,9 @@
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\MapTraversal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch3\IntroToThreading.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
