@@ -4,6 +4,7 @@
 #include <conio.h>
 
 #include "StateMachineExampleGame.h"
+#include "SceneInfo.h"
 
 using namespace std;
 
@@ -13,12 +14,16 @@ WinState::WinState(StateMachineExampleGame* pOwner)
 {
 }
 
-bool WinState::ProcessInput()
+void WinState::ProcessInput()
 {
 	// if true
 	int input = _getch();
-	m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	return false;
+
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::Win)
+	{
+		m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+	}
+	
 }
 
 void WinState::Draw()

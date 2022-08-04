@@ -5,6 +5,7 @@
 
 #include "StateMachineExampleGame.h"
 #include "Utility.h"
+#include "SceneInfo.h"
 
 using namespace std;
 
@@ -15,12 +16,14 @@ HighScoreState::HighScoreState(StateMachineExampleGame* pOwner)
 	m_HighScores = Utility::WriteHighScore(0);
 }
 
-bool HighScoreState::ProcessInput()
+void HighScoreState::ProcessInput()
 {
 	// if true
 	int input = _getch();
-	m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	return false;
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::HighScore)
+	{
+		m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+	}
 }
 
 void HighScoreState::Draw()

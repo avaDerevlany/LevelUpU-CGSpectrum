@@ -1,5 +1,6 @@
 #pragma once
 #include "GameState.h"
+#include "SceneInfo.h"
 
 class StateMachineExampleGame;
 
@@ -12,6 +13,7 @@ public:
 	~WinState() = default;
 
 	//virtual bool Update(bool processInput = true) override;
-	virtual bool ProcessInput() override;
+	virtual void ProcessInput() override;
 	virtual void Draw() override;
+	virtual SceneInfo::SceneName GetType() override { return SceneInfo::SceneName::Win; };
 };

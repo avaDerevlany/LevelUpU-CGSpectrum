@@ -8,6 +8,9 @@
 #include "WinState.h"
 #include "Game.h"
 
+//StateMachineExampleGame::SceneName currentSceneState = StateMachineExampleGame::SceneName::None;
+
+
 StateMachineExampleGame::StateMachineExampleGame(Game* pOwner)
 	: m_pOwner(pOwner)
 	, m_pCurrentState(nullptr)
@@ -17,7 +20,7 @@ StateMachineExampleGame::StateMachineExampleGame(Game* pOwner)
 
 bool StateMachineExampleGame::Init()
 {
-	LoadScene(SceneName::MainMenu);
+	LoadScene(SceneInfo::SceneName::MainMenu);
 	return true;
 }
 
@@ -60,39 +63,52 @@ void StateMachineExampleGame::ChangeState(GameState* pNewState)
 
 	delete m_pCurrentState;
 	m_pCurrentState = pNewState;
+	SceneInfo::GetInstance()->SetCurrentScene(m_pCurrentState->GetType());
 	pNewState->Enter();
 }
 
-void StateMachineExampleGame::LoadScene(SceneName scene)
+void StateMachineExampleGame::LoadScene(SceneInfo::SceneName scene)
 {
 	switch (scene)
 	{
-	case SceneName::None:
+	case SceneInfo::SceneName::None:
 		// do nothing
 		break;
-	case SceneName::MainMenu:
+	case SceneInfo::SceneName::MainMenu:
 		m_pNextState = new MainMenuState(this);
+		//SceneInfo::GetInstance()->SetCurrentScene(SceneInfo::SceneName::MainMenu);
 		break;
-	case SceneName::LevelSelect:
+	case SceneInfo::SceneName::LevelSelect:
 		m_pNextState = new LevelSelectionState(this);
+		//SceneInfo::GetInstance()->SetCurrentScene(SceneInfo::SceneName::LevelSelect);
 		break;
-	case SceneName::Gameplay:
+	case SceneInfo::SceneName::Gameplay:
 		m_pNextState = new GameplayState(this);
+		//SceneInfo::GetInstance()->SetCurrentScene(SceneInfo::SceneName::Gameplay);
 		break;
-	case SceneName::Settings:
+	case SceneInfo::SceneName::Settings:
 		m_pNextState = new SettingsState(this);
+		//SceneInfo::GetInstance()->SetCurrentScene(SceneInfo::SceneName::Settings);
 		break;
-	case SceneName::HighScore:
+	case SceneInfo::SceneName::HighScore:
 		m_pNextState = new HighScoreState(this);
+		//SceneInfo::currentScene = SceneInfo::SceneName::HighScore;
 		break;
-	case SceneName::Win:
+	case SceneInfo::SceneName::Win:
 		m_pNextState = new WinState(this);
+		//SceneInfo::currentScene = SceneInfo::SceneName::Win;
 		break;
-	case SceneName::Lose:
+	case SceneInfo::SceneName::Lose:
 		m_pNextState = new LoseState(this);
+		//SceneInfo::currentScene = SceneInfo::SceneName::Lose;
 		break;
 	}
 
+}
+
+SceneInfo::SceneName StateMachineExampleGame::GetCurrentState()
+{
+	return m_pCurrentState->GetType();
 }
 
 bool StateMachineExampleGame::Cleanup()

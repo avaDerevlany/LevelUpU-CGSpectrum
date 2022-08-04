@@ -205,13 +205,40 @@ int Level::GetIndexFromCoordinates(int x, int y)
 }
 
 // Updates all actors and returns a colliding actor if there is one
-PlacableActor* Level::UpdateActors(int x, int y)
+PlacableActor* Level::CheckCollisionWithActor(int x, int y)
 {
 	PlacableActor* collidedActor = nullptr;
 
 	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
 	{
-		(*actor)->Update(); // Update all actors
+		//(*actor)->Update(); // Update all actors outside of checking collision
+
+		if (x == (*actor)->GetXPosition() && y == (*actor)->GetYPosition())
+		{
+			// should only be able to collide with one actor
+			assert(collidedActor == nullptr);
+			collidedActor = (*actor);
+		}
+	}
+
+	return collidedActor;
+}
+
+void Level::UpdateActors()
+{
+	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
+	{
+		(*actor)->Update(); // Update all actors outside of checking collision
+	}
+}
+
+PlacableActor* Level::UpdateAndCheckCollisionWithActor(int x, int y)
+{
+	PlacableActor* collidedActor = nullptr;
+
+	for (auto actor = m_pActors.begin(); actor != m_pActors.end(); ++actor)
+	{
+		(*actor)->Update();
 
 		if (x == (*actor)->GetXPosition() && y == (*actor)->GetYPosition())
 		{

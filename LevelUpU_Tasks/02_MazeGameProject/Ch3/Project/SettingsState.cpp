@@ -5,6 +5,7 @@
 
 #include "StateMachineExampleGame.h"
 #include "AudioManager.h"
+#include "SceneInfo.h"
 
 using namespace std;
 
@@ -17,23 +18,25 @@ SettingsState::SettingsState(StateMachineExampleGame* pOwner)
 {
 }
 
-bool SettingsState::ProcessInput()
+void SettingsState::ProcessInput()
 {
 	// if true
 	int input = _getch();
-	if (input == kEscapeKey || (char)input == kMainMenu)
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::Settings)
 	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	}
-	else if ((char)input == kSound)
-	{
-		AudioManager::GetInstance()->ToggleSound();
-		if (AudioManager::GetInstance()->IsSoundOn())
+		if (input == kEscapeKey || (char)input == kMainMenu)
 		{
-			AudioManager::GetInstance()->PlayMoneySound();
+			m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+		}
+		else if ((char)input == kSound)
+		{
+			AudioManager::GetInstance()->ToggleSound();
+			if (AudioManager::GetInstance()->IsSoundOn())
+			{
+				AudioManager::GetInstance()->PlayMoneySound();
+			}
 		}
 	}
-	return false;
 }
 
 void SettingsState::Draw()

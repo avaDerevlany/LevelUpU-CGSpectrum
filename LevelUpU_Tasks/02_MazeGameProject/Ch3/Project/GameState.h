@@ -1,13 +1,21 @@
 #pragma once
+#include "StateMachineExampleGame.h"
+#include "SceneInfo.h"
 
 class GameState
 {
-public:
-	virtual ~GameState() {}
+protected:
+	bool isActive = false;
 
-	virtual void Enter() {}
-	virtual bool Update() { return false; }
-	virtual bool ProcessInput() { return false; };
+public:
+	virtual ~GameState() {};
+
+	virtual void Enter() { isActive = true; };
+	virtual bool Update() { return false; };
+	virtual void ProcessInput() { };
 	virtual void Draw() = 0;
-	virtual void Exit() {}
+	virtual void Exit() { isActive = false; };
+	virtual SceneInfo::SceneName GetType() { return SceneInfo::SceneName::None; };
+
+	virtual bool IsSceneActive() { return isActive; };
 };

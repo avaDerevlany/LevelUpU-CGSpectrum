@@ -1,4 +1,5 @@
 #include "MainMenuState.h"
+#include "SceneInfo.h"
 
 #include <iostream>
 #include <conio.h>
@@ -18,34 +19,44 @@ constexpr char kQuit = '5';
 MainMenuState::MainMenuState(StateMachineExampleGame* pOwner)
 	: m_pOwner(pOwner)
 {
+	m_shouldQuit = false;
 }
 
-bool MainMenuState::ProcessInput()
+bool MainMenuState::Update()
 {
-	bool shouldQuit = false;
+	return m_shouldQuit;
+}
+
+void MainMenuState::ProcessInput()
+{
+	//bool shouldQuit = false;
 	// if tue
 	int input = _getch();
-	if (input == kEscapeKey || (char)input == kQuit)
+
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::MainMenu)
 	{
-		shouldQuit = true;
+		if (input == kEscapeKey || (char)input == kQuit)
+		{
+			m_shouldQuit = true;
+		}
+		else if ((char)input == kPlay)
+		{
+			m_pOwner->LoadScene(SceneInfo::SceneName::Gameplay);
+		}
+		else if ((char)input == kLevelSelect)
+		{
+			m_pOwner->LoadScene(SceneInfo::SceneName::LevelSelect);
+		}
+		else if ((char)input == kHighScore)
+		{
+			m_pOwner->LoadScene(SceneInfo::SceneName::HighScore);
+		}
+		else if ((char)input == kSettings)
+		{
+			m_pOwner->LoadScene(SceneInfo::SceneName::Settings);
+		}
 	}
-	else if ((char)input == kPlay)
-	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Gameplay);
-	}
-	else if ((char)input == kLevelSelect)
-	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::LevelSelect);
-	}
-	else if ((char)input == kHighScore)
-	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::HighScore);
-	}
-	else if ((char)input == kSettings)
-	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Settings);
-	}
-	return shouldQuit;
+	//return shouldQuit;
 }
 
 void MainMenuState::Draw()

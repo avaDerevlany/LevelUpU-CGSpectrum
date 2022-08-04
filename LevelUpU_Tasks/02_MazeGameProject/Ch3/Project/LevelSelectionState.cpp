@@ -2,6 +2,7 @@
 
 #include "LevelSelectionState.h"
 #include "GameLevels.h"
+#include "SceneInfo.h"
 
 #include <iostream>
 #include <string>
@@ -20,30 +21,33 @@ LevelSelectionState::LevelSelectionState(StateMachineExampleGame* pOwner)
 
 }
 
-bool LevelSelectionState::ProcessInput()
+void LevelSelectionState::ProcessInput()
 {
 	// if true
 	int input = _getch();
-	if (input == kEscapeKey)
+
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::LevelSelect)
 	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	}
-	else
-	{
-		int numLevels = GameLevels::GetInstance()->GetNumberOfLevels();
-		char charInput = (char)input;
-		string stringInput = "";
-		stringInput += charInput;
-		int intInput = stoi(stringInput) - 1;	// +1 added in the menu so levels start at 1 (not 0)
-		
-		if (intInput < numLevels && intInput >= 0)
+		if (input == kEscapeKey)
 		{
-			// boot the level with that input index
-			GameLevels::GetInstance()->SetCurrentLevel(intInput);
-			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Gameplay);
+			m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+		}
+		else
+		{
+			int numLevels = GameLevels::GetInstance()->GetNumberOfLevels();
+			char charInput = (char)input;
+			string stringInput = "";
+			stringInput += charInput;
+			int intInput = stoi(stringInput) - 1;	// +1 added in the menu so levels start at 1 (not 0)
+
+			if (intInput < numLevels && intInput >= 0)
+			{
+				// boot the level with that input index
+				GameLevels::GetInstance()->SetCurrentLevel(intInput);
+				m_pOwner->LoadScene(SceneInfo::SceneName::Gameplay);
+			}
 		}
 	}
-	return false;
 }
 
 void LevelSelectionState::Draw()

@@ -1,5 +1,6 @@
 #pragma once
 #include "GameState.h"
+#include "SceneInfo.h"
 
 #include <set>
 
@@ -15,7 +16,8 @@ public:
 	~HighScoreState() = default;
 
 	//virtual bool Update() override;
-	virtual bool ProcessInput() override;
+	virtual void ProcessInput() override;
 	virtual void Draw() override;
+	virtual SceneInfo::SceneName GetType() override { return SceneInfo::SceneName::HighScore; };
 };
 

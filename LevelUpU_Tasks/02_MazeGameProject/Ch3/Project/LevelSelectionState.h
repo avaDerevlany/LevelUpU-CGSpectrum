@@ -1,5 +1,6 @@
 #pragma once
 #include "GameState.h"
+#include "SceneInfo.h"
 
 #include <vector>
 #include <string>
@@ -15,6 +16,7 @@ public:
 	~LevelSelectionState() = default;
 
 	//virtual bool Update() override;
-	virtual bool ProcessInput() override;
+	virtual void ProcessInput() override;
 	virtual void Draw() override;
+	virtual SceneInfo::SceneName GetType() override { return SceneInfo::SceneName::LevelSelect; };
 };

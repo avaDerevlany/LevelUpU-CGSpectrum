@@ -1,4 +1,5 @@
 #include "LoseState.h"
+#include "SceneInfo.h"
 
 #include <iostream>
 #include <conio.h>
@@ -13,12 +14,16 @@ LoseState::LoseState(StateMachineExampleGame* pOwner)
 {
 }
 
-bool LoseState::ProcessInput()
+void LoseState::ProcessInput()
 {
 	// if true
 	int input = _getch();
-	m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	return false;
+
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::Lose)
+	{
+		m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+	}
+	
 }
 
 void LoseState::Draw()

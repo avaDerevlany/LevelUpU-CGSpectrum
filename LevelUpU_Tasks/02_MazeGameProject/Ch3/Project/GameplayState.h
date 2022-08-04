@@ -2,6 +2,7 @@
 #include "GameState.h"
 #include "Player.h"
 #include "Level.h"
+#include "SceneInfo.h"
 
 #include <windows.h>
 #include <vector>
@@ -20,21 +21,20 @@ class GameplayState : public GameState
 	int m_skipFrameCount;
 	static constexpr int kFramesToSkip = 2;
 
-	//int m_currentLevel;
-
-	//std::vector<std::string> m_LevelNames;
-
 public:
 	GameplayState(StateMachineExampleGame* pOwner);
 	~GameplayState();
 
 	virtual void Enter() override;
+	virtual void Exit() override;
 	virtual bool Update() override;
-	virtual bool ProcessInput() override;
+	virtual void ProcessInput() override;
 	virtual void Draw() override;
+	virtual SceneInfo::SceneName GetType() override { return SceneInfo::SceneName::Gameplay; };
 
 private:
 	void HandleCollision(int newPlayerX, int newPlayerY);
+	void UpdateAndCheckCollision();
 	bool Load();
 	void DrawHUD(const HANDLE& console);
 };

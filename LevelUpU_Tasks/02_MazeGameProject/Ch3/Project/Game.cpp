@@ -1,4 +1,6 @@
 #include "Game.h"
+#include <thread>
+#include <chrono>
 
 Game::Game()
 	: m_pStateMachine(nullptr)
@@ -30,7 +32,10 @@ void Game::Initialize(GameStateMachine* pStateMachine)
 */
 void Game::RunGameLoop()
 {
-	bool isGameOver = false;
+	isGameOver = false;
+
+	// create the input thread
+	std::thread InputThread(&Game::InputThread, this);
 
 	while (!isGameOver)
 	{
@@ -38,9 +43,15 @@ void Game::RunGameLoop()
 		isGameOver = Update();
 		// Draw
 		Draw();
-		// process input
-		ProcessInput();
+		// process input -> now handeled by a different thread
+		//ProcessInput();
+
+		// slow down the update, too flickery
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
+
+	// game ending, cancel the thread
+	InputThread.join();
 
 	Draw();
 }
@@ -54,6 +65,15 @@ void Game::Deinitialize()
 bool Game::Update()
 {
 	return m_pStateMachine->UpdateCurrentState();
+}
+
+void Game::InputThread()
+{
+	while (!isGameOver)
+	{
+		// process input
+		ProcessInput();
+	}
 }
 
 void Game::ProcessInput()

@@ -1,23 +1,14 @@
 #pragma once
 #include "GameStateMachine.h"
+#include "SceneInfo.h"
 
 class Game;
 class GameState;
 
 class StateMachineExampleGame : public GameStateMachine
 {
-public:
-	enum class SceneName
-	{
-		None,
-		MainMenu,
-		Gameplay,
-		Settings,
-		HighScore,
-		Lose,
-		Win,
-		LevelSelect,
-	};
+//public:
+//	
 
 private:
 	Game* m_pOwner;
@@ -33,7 +24,8 @@ public:
 	virtual void ProcessInputCurrentState() override;
 	virtual void DrawCurrentState() override;
 	virtual void ChangeState(GameState* pNewState) override;
-	void LoadScene(SceneName scene);
+	void LoadScene(SceneInfo::SceneName scene);
+	SceneInfo::SceneName GetCurrentState();
 	virtual bool Cleanup() override;
 };
 

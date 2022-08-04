@@ -13,6 +13,7 @@
 
 class GameLevels
 {
+private:
 	static GameLevels* s_pInstance;
 
 	std::vector<std::string> m_LevelNames;
@@ -25,6 +26,11 @@ class GameLevels
 		m_LevelNames.push_back("Level1.txt");
 		m_LevelNames.push_back("Level4.txt");
 		m_LevelNames.push_back("Level5.txt");
+	}
+
+	~GameLevels()
+	{
+		DestroyInstance();
 	}
 
 public:

@@ -13,7 +13,10 @@ public:
 	void Deinitialize();
 
 private:
+	bool isGameOver;
+
 	bool Update();
+	void InputThread();
 	void ProcessInput();
 	void Draw();
 };

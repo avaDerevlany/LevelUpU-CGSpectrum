@@ -15,6 +15,7 @@
 #include "Utility.h"
 #include "StateMachineExampleGame.h"
 #include "GameLevels.h"
+#include "SceneInfo.h"
 
 using namespace std;
 
@@ -59,11 +60,21 @@ bool GameplayState::Load()
 
 void GameplayState::Enter()
 {
+	isActive = true;
 	Load();
+}
+
+void GameplayState::Exit()
+{
+	isActive = false;
 }
 
 bool GameplayState::Update()
 {
+	// handle enemy collision + movement
+	//m_pLevel->UpdateActors();
+	UpdateAndCheckCollision();
+
 	if (m_beatLevel)
 	{
 		++m_skipFrameCount;
@@ -81,7 +92,7 @@ bool GameplayState::Update()
 
 				AudioManager::GetInstance()->PlayWinSound();
 				
-				m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Win);
+				m_pOwner->LoadScene(SceneInfo::SceneName::Win);
 			}
 			else
 			{
@@ -95,97 +106,101 @@ bool GameplayState::Update()
 	return false;
 }
 
-bool GameplayState::ProcessInput()
+void GameplayState::ProcessInput()
 {
 	int input = _getch();
-	int arrowInput = 0;
-	int newPlayerX = m_player.GetXPosition();
-	int newPlayerY = m_player.GetYPosition();
+	
+	// scene can change while waiting for input, therefor check that you are still in the scene that can handle said input
 
-	// One of the arrow keys were pressed
-	if (input == kArrowInput)
+	if (SceneInfo::GetInstance()->GetSceneName() == SceneInfo::SceneName::Gameplay)
 	{
-		arrowInput = _getch();
-	}
+		int arrowInput = 0;
+		int newPlayerX = m_player.GetXPosition();
+		int newPlayerY = m_player.GetYPosition();
 
-	if ((input == kArrowInput && arrowInput == kLeftArrow) ||
-		(char)input == 'A' || (char)input == 'a')
-	{
-		newPlayerX--;
-	}
-	else if ((input == kArrowInput && arrowInput == kRightArrow) ||
-		(char)input == 'D' || (char)input == 'd')
-	{
-		newPlayerX++;
-	}
-	else if ((input == kArrowInput && arrowInput == kUpArrow) ||
-		(char)input == 'W' || (char)input == 'w')
-	{
-		newPlayerY--;
-	}
-	else if ((input == kArrowInput && arrowInput == kDownArrow) ||
-		(char)input == 'S' || (char)input == 's')
-	{
-		newPlayerY++;
-	}
-	else if (input == kEscapeKey)
-	{
-		m_pOwner->LoadScene(StateMachineExampleGame::SceneName::MainMenu);
-	}
-	else if ((char)input == 'Z' || (char)input == 'z')
-	{
-		m_player.DropKey();
-	}
+		// One of the arrow keys were pressed
+		if (input == kArrowInput)
+		{
+			arrowInput = _getch();
+		}
 
-	// If position never changed
-	if (newPlayerX == m_player.GetXPosition() && newPlayerY == m_player.GetYPosition())
-	{
-		//return false;
-	}
-	else
-	{
-		HandleCollision(newPlayerX, newPlayerY);
-	}
+		if ((input == kArrowInput && arrowInput == kLeftArrow) ||
+			(char)input == 'A' || (char)input == 'a')
+		{
+			newPlayerX--;
+		}
+		else if ((input == kArrowInput && arrowInput == kRightArrow) ||
+			(char)input == 'D' || (char)input == 'd')
+		{
+			newPlayerX++;
+		}
+		else if ((input == kArrowInput && arrowInput == kUpArrow) ||
+			(char)input == 'W' || (char)input == 'w')
+		{
+			newPlayerY--;
+		}
+		else if ((input == kArrowInput && arrowInput == kDownArrow) ||
+			(char)input == 'S' || (char)input == 's')
+		{
+			newPlayerY++;
+		}
+		else if (input == kEscapeKey)
+		{
+			m_pOwner->LoadScene(SceneInfo::SceneName::MainMenu);
+		}
+		else if ((char)input == 'Z' || (char)input == 'z')
+		{
+			m_player.DropKey();
+		}
 
-	return false;
+		// If position never changed
+		if (newPlayerX == m_player.GetXPosition() && newPlayerY == m_player.GetYPosition())
+		{
+			//return false;
+		}
+		else
+		{
+			HandleCollision(newPlayerX, newPlayerY);
+		}
+	}
 }
 
 void GameplayState::HandleCollision(int newPlayerX, int newPlayerY)
 {
-	PlacableActor* collidedActor = m_pLevel->UpdateActors(newPlayerX, newPlayerY);
+	PlacableActor* collidedActor = m_pLevel->CheckCollisionWithActor(newPlayerX, newPlayerY);
 	if (collidedActor != nullptr && collidedActor->IsActive())
 	{
 		switch (collidedActor->GetType())
 		{
-		case ActorType::Enemy:
-		{
-			Enemy* collidedEnemy = dynamic_cast<Enemy*>(collidedActor);
-			assert(collidedEnemy);
+		//case ActorType::Enemy:
+		//{
+		//	Enemy* collidedEnemy = dynamic_cast<Enemy*>(collidedActor);
+		//	assert(collidedEnemy);
 
-			// if player has sword, kill enemy instead
-			if (m_player.HasSword())
-			{
-				AudioManager::GetInstance()->PlayLoseLivesSound(); //AudioManager::GetInstance()->PlayKillEnemy();
-				collidedEnemy->Remove();
-				m_player.SetPosition(newPlayerX, newPlayerY);
-			}
-			else
-			{
-				AudioManager::GetInstance()->PlayLoseLivesSound();
-				collidedEnemy->Remove();
-				m_player.SetPosition(newPlayerX, newPlayerY);
+		//	// if player has sword, kill enemy instead
+		//	if (m_player.HasSword())
+		//	{
+		//		AudioManager::GetInstance()->PlayLoseLivesSound(); //AudioManager::GetInstance()->PlayKillEnemy();
+		//		collidedEnemy->Remove();
+		//		m_player.SetPosition(newPlayerX, newPlayerY);
+		//	}
+		//	else
+		//	{
+		//		AudioManager::GetInstance()->PlayLoseLivesSound();
+		//		collidedEnemy->Remove();
+		//		m_player.SetPosition(newPlayerX, newPlayerY);
 
-				m_player.DecrementLives();
-				if (m_player.GetLives() < 0)
-				{
-					//TODO: Go to game over screen
-					AudioManager::GetInstance()->PlayLoseSound();
-					m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Lose);
-				}
-			}
+		//		m_player.DecrementLives();
+		//		if (m_player.GetLives() < 0)
+		//		{
+		//			//TODO: Go to game over screen
+		//			AudioManager::GetInstance()->PlayLoseSound();
+		//			m_pOwner->LoadScene(StateMachineExampleGame::SceneName::Lose);
+		//		}
+		//	}
 
-			break;
-		}
+		//	break;
+		//}
 		case ActorType::Money:
 		{
 			Money* collidedMoney = dynamic_cast<Money*>(collidedActor);
@@ -267,6 +282,46 @@ void GameplayState::HandleCollision(int newPlayerX, int newPlayerY)
 	else if (m_pLevel->IsWall(newPlayerX, newPlayerY))
 	{
 		// wall collision, do nothing
+	}
+}
+
+void GameplayState::UpdateAndCheckCollision()
+{
+	PlacableActor* collidedActor = m_pLevel->UpdateAndCheckCollisionWithActor(m_player.GetXPosition(), m_player.GetYPosition());
+	if (collidedActor != nullptr && collidedActor->IsActive())
+	{
+		switch (collidedActor->GetType())
+		{
+			case ActorType::Enemy:
+			{
+				Enemy* collidedEnemy = dynamic_cast<Enemy*>(collidedActor);
+				assert(collidedEnemy);
+
+				// if player has sword, kill enemy instead
+				if (m_player.HasSword())
+				{
+					AudioManager::GetInstance()->PlayLoseLivesSound(); //AudioManager::GetInstance()->PlayKillEnemy();
+					collidedEnemy->Remove();
+				}
+				else
+				{
+					AudioManager::GetInstance()->PlayLoseLivesSound();
+					collidedEnemy->Remove();
+
+					m_player.DecrementLives();
+					if (m_player.GetLives() < 0)
+					{
+						//TODO: Go to game over screen
+						AudioManager::GetInstance()->PlayLoseSound();
+						m_pOwner->LoadScene(SceneInfo::SceneName::Lose);
+					}
+				}
+
+				break;
+			}
+			default:
+				break;
+		}
 	}
 }
 
