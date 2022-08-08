@@ -29,5 +29,8 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 		IntroToThreading
 	Ch 4
 		Add threading to maze game -> 02_MazeGameProject\Ch3 Project.sln
+
+04_NetworkingandCodeFinalising
+	EnetPracticeSetup.cpp		(for ch1)
 		
 	

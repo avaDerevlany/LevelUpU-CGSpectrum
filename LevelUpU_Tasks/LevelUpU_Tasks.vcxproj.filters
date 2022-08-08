@@ -57,6 +57,12 @@
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch3\IntroToThreading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\EnetPracticeSetup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
@@ -69,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="03_AlgorithmsAnalysisAndMultithreading\Section3Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Section4Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
