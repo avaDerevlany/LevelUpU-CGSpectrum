@@ -146,13 +146,19 @@
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch1\SortingAlgorithm.cpp" />
     <ClCompile Include="03_AlgorithmsAnalysisAndMultithreading\Ch3\IntroToThreading.cpp" />
     <ClCompile Include="04_NetworkingandCodeFinalising.cpp" />
-    <ClCompile Include="04_NetworkingandCodeFinalising\EnetPracticeSetup.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch1\EnetPracticeSetup.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h" />
     <ClInclude Include="02_MazeGameProject\Section2Header.h" />
     <ClInclude Include="03_AlgorithmsAnalysisAndMultithreading\Section3Header.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.h" />
     <ClInclude Include="04_NetworkingandCodeFinalising\Section4Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

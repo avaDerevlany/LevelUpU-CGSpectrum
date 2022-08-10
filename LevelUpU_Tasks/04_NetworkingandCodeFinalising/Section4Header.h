@@ -1,8 +1,11 @@
 #pragma once
 #include <enet/enet.h>
 
-//Enet setup
+//Ch 1 / Ch 2
 int EnetPractice();
-void EnetClientServerParctice();
-bool SetUpServer(ENetHost* server, ENetAddress address);
-bool SetUpClient(ENetHost* client);
+void EnetClientServerPractice();
+ENetHost* SetUpServer(ENetHost* server, ENetAddress address);
+ENetHost* SetUpClient(ENetHost* client);
+ENetPeer* HandleEvent(ENetHost* client);
+ENetPeer* ConnectToServer(ENetHost* client, ENetAddress address);
+void SendPacket(ENetPeer* client, ENetHost* host);

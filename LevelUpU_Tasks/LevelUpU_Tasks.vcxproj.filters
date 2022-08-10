@@ -60,7 +60,16 @@
     <ClCompile Include="04_NetworkingandCodeFinalising.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="04_NetworkingandCodeFinalising\EnetPracticeSetup.cpp">
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch1\EnetPracticeSetup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -78,6 +87,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="04_NetworkingandCodeFinalising\Section4Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
