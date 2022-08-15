@@ -3,6 +3,7 @@
 #include <iostream>
 #include "04_NetworkingandCodeFinalising\Section4Header.h"
 #include "04_NetworkingandCodeFinalising\Ch2\ChatProgram.h"
+#include "04_NetworkingandCodeFinalising\Ch3\GuessingGameProgram.h"
 
 using namespace std;
 
@@ -13,8 +14,11 @@ int main()
 
     //EnetClientServerPractice();
 
-    ChatProgram chatProgram = ChatProgram();
+    //ChatProgram chatProgram = ChatProgram();
 
-    chatProgram.Start();
+    //chatProgram.Start();
+
+    GuessingGameProgram guessingGameProgram = GuessingGameProgram();
+    guessingGameProgram.Start();
 }
 #endif

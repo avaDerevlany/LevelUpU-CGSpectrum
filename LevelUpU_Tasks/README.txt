@@ -37,4 +37,10 @@ Functions run in main() of the file sharing the name of the root folder (ie 01_S
 		ChatProgram.h / .cpp	<- create new instance, .Start() to run chat program
 		ChatServer.h / .cpp
 		ChatClient.h / .cpp
+	Ch 3
+		GuessingGameProgram.h / .cpp	<- create new instance, .Start() to run chat program
+		PacketStructs.h
+		GuessingGamePeer.h /. cpp   - GuessingGameServer.h / .cpp
+					    - GuessingGameClient.h / .cpp
+		
 	

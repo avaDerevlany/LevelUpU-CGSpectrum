@@ -150,6 +150,10 @@
     <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.cpp" />
     <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.cpp" />
     <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameClient.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGamePeer.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameProgram.cpp" />
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Ch4\VehicleInheritance.h" />
@@ -159,6 +163,11 @@
     <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatClient.h" />
     <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.h" />
     <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatServer.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameClient.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGamePeer.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameProgram.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameServer.h" />
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\PacketStructs.h" />
     <ClInclude Include="04_NetworkingandCodeFinalising\Section4Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -72,6 +72,18 @@
     <ClCompile Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGamePeer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="01_SettingUpAndProgrammingFoundations\Section1Header.h">
@@ -96,6 +108,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="04_NetworkingandCodeFinalising\Ch2\ChatProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGameClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\GuessingGamePeer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="04_NetworkingandCodeFinalising\Ch3\PacketStructs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
